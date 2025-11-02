@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AlternatorRegulator" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/warm_gray</item>
+        <item name="colorPrimaryDark">@color/warm_gray_dark</item>
+        <item name="colorAccent">@color/warm_accent</item>
+        <item name="android:windowBackground">@color/warm_white</item>
+        <item name="android:textColorPrimary">@color/dark_text</item>
+    </style>
+
+    <style name="Theme.AlternatorRegulator" parent="Base.Theme.AlternatorRegulator" />
+</resources>

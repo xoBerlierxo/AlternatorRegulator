@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Line Voltage (Voc)"
+                    android:hint="Phase Voltage (Voc)"
                     android:layout_marginStart="8dp">
 
                     <com.google.android.material.textfield.TextInputEditText

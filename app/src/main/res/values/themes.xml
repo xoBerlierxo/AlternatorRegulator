@@ -1,13 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.AlternatorRegulator" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/warm_gray</item>
-        <item name="colorPrimaryDark">@color/warm_gray_dark</item>
-        <item name="colorAccent">@color/warm_accent</item>
-        <item name="android:windowBackground">@color/warm_white</item>
-        <item name="android:textColorPrimary">@color/dark_text</item>
-    </style>
+    <style name="Theme.AlternatorRegulator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
-    <style name="Theme.AlternatorRegulator" parent="Base.Theme.AlternatorRegulator" />
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>

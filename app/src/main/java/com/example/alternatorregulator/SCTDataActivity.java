@@ -30,7 +30,6 @@ public class SCTDataActivity extends AppCompatActivity {
     ArrayList<TestDataPoint> sctList = new ArrayList<>();
     SctAdapter sctAdapter; // Use our new custom adapter
 
-    double ratedV, ratedI, dcV, dcI;
     ArrayList<TestDataPoint> octList;
 
     @Override
@@ -40,10 +39,8 @@ public class SCTDataActivity extends AppCompatActivity {
 
         // Get all data passed from OCTDataActivity
         Intent intent = getIntent();
-        ratedV = intent.getDoubleExtra("RATED_V", 0.0);
-        ratedI = intent.getDoubleExtra("RATED_I", 0.0);
-        dcV = intent.getDoubleExtra("DC_V", 0.0);
-        dcI = intent.getDoubleExtra("DC_I", 0.0);
+        double Vph_rated = intent.getDoubleExtra("V_PHASE_RATED", 0.0);
+        double Ia_rated = intent.getDoubleExtra("I_ARMATURE_RATED", 0.0);
         octList = (ArrayList<TestDataPoint>) intent.getSerializableExtra("OCT_LIST");
 
         // Link Java variables to XML
@@ -92,10 +89,8 @@ public class SCTDataActivity extends AppCompatActivity {
             Intent resultsIntent = new Intent(SCTDataActivity.this, ResultsActivity.class);
 
             // Pass ALL data (the full dataset) to the final screen
-            resultsIntent.putExtra("RATED_V", ratedV);
-            resultsIntent.putExtra("RATED_I", ratedI);
-            resultsIntent.putExtra("DC_V", dcV);
-            resultsIntent.putExtra("DC_I", dcI);
+            resultsIntent.putExtra("V_PHASE_RATED", Vph_rated);
+            resultsIntent.putExtra("I_ARMATURE_RATED", Ia_rated);
             resultsIntent.putExtra("OCT_LIST", octList);
             resultsIntent.putExtra("SCT_LIST", sctList);
 

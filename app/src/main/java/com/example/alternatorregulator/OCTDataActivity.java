@@ -30,8 +30,6 @@ public class OCTDataActivity extends AppCompatActivity {
     ArrayList<TestDataPoint> octList = new ArrayList<>();
     OctSctAdapter octAdapter; // Use our new custom adapter
 
-    double ratedV, ratedI, dcV, dcI;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +37,9 @@ public class OCTDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_octdata);
 
         Intent intent = getIntent();
-        ratedV = intent.getDoubleExtra("RATED_V", 0.0);
-        ratedI = intent.getDoubleExtra("RATED_I", 0.0);
-        dcV = intent.getDoubleExtra("DC_V", 0.0);
-        dcI = intent.getDoubleExtra("DC_I", 0.0);
+        // In OCTDataActivity.java
+        double Vph_rated = intent.getDoubleExtra("V_PHASE_RATED", 0.0);
+        double Ia_rated = intent.getDoubleExtra("I_ARMATURE_RATED", 0.0);
 
         etOctIf = findViewById(R.id.etOctIf);
         etOctValue = findViewById(R.id.etOctValue);
@@ -87,10 +84,9 @@ public class OCTDataActivity extends AppCompatActivity {
             // --- End validation ---
 
             Intent nextIntent = new Intent(OCTDataActivity.this, SCTDataActivity.class);
-            nextIntent.putExtra("RATED_V", ratedV);
-            nextIntent.putExtra("RATED_I", ratedI);
-            nextIntent.putExtra("DC_V", dcV);
-            nextIntent.putExtra("DC_I", dcI);
+            // In OCTDataActivity.java
+            nextIntent.putExtra("V_PHASE_RATED", Vph_rated);
+            nextIntent.putExtra("I_ARMATURE_RATED", Ia_rated);
             nextIntent.putExtra("OCT_LIST", octList);
             startActivity(nextIntent);
         });

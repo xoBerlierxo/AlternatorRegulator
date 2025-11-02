@@ -11,21 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlternatorRegulator">
+
         <activity
             android:name=".ResultsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Results &amp; Curves" />
         <activity
             android:name=".SCTDataActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Short Circuit Test (SCT)" />
         <activity
             android:name=".OCTDataActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Open Circuit Test (OCT)" />
         <activity
             android:name=".RatedDataActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Alternator Regulator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
